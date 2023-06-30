@@ -1,4 +1,4 @@
-import { Hero } from '@/components';
+import { Hero,SearchBar, CustomFilter } from '@/components';
 import Image from 'next/image';
 
 
