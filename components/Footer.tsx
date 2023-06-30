@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className="flex flex-col text-black-100 pt-5 border-t border-gray-100">
+      
+    </footer>
   )
 }
 
