@@ -23,12 +23,12 @@ const CarCard = ({ car }: CarCardProps) => {
                     {make} {model}
                 </h2>
             </div>
-            <p className="flex mt-6 text-[32px]">
-                <span className="self-start text-[14px] font-semibold">
+            <p className="flex mt-6 text-[32px]  leading-[38px] font-extrabold">
+                <span className="self-start text-[14px] leading-[17px] font-semibold">
                     $
                 </span>
                 {carRent}
-                <span className="self-end text-[14px] font-medium">
+                <span className="self-end text-[14px] leading-[17px] font-medium">
                     /day
                 </span>
             </p>
@@ -36,7 +36,7 @@ const CarCard = ({ car }: CarCardProps) => {
                 <Image src="/hero.png"
                     alt="car-model" fill priority className="object-contain" />
             </div>
-            <div className="relative flex-full mt-2">
+            <div className="relative flex w-full mt-2">
                 <div className="flex group-hover:invisible w-full justify-between text-grey">
                     <div className="flex flex-col justify-center items-center gap-2">
                         <Image src="/gas.svg" width={20} height={20} alt="gas" />
