@@ -1,9 +1,10 @@
-import { Hero,SearchBar, CustomFilter, CarCard } from '@/components';
+import { Hero, ShowMore, SearchBar, CustomFilter, CarCard } from '@/components';
 import { fuels, yearsOfProduction } from '@/constants';
 import { fetchCars } from '@/utils';
+import { HomeProps } from "@types";
 import Image from 'next/image';
 
-export default async function Home({searchParams}) {
+export default async function Home({searchParams}:HomeProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || 2022,
@@ -26,6 +27,7 @@ export default async function Home({searchParams}) {
             Explore and choose the car you might like!
           </p>
         </div>
+        
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
@@ -41,6 +43,11 @@ export default async function Home({searchParams}) {
                 <CarCard car={car} />
               ))}
             </div>
+
+            <ShowMore 
+              placeholder={(searchParams.limit || 10) /10}
+              isNext = {(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ):(
           <div className="home__error-container">
