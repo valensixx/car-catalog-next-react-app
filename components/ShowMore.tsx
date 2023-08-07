@@ -3,8 +3,8 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { updateSearchParams } from '@/utils';
-import { CustomButton } from "@components";
-import { ShowMoreProps } from "@types";
+import { CustomButton } from "@/components";
+import { ShowMoreProps } from '@/types';
 
 
 const ShowMore = ({pageNumber, isNext}: ShowMoreProps) => {
@@ -18,7 +18,16 @@ const ShowMore = ({pageNumber, isNext}: ShowMoreProps) => {
         router.push(newPathName);
     }
   return (
-    <div>ShowMore</div>
+    <div className="w-full flex-center gap-5 mt-10">
+    {!isNext && (
+      < CustomButton
+        btnType="button"
+        title="Show More"
+        containerStyles="bg-primary-blue rounded-full text-white"
+        handleClick={handleNavigation}
+      />
+    )}
+  </div>
   );
 };
 

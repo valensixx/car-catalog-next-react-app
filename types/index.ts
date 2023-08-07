@@ -78,6 +78,6 @@ export interface CustomButtonProps {
   export interface ShowMoreProps {
     pageNumber: number;
     isNext: boolean;
+    placeholder: number;
   }
 
-  
